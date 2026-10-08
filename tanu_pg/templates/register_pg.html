@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register PG</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Container */
+        .container {
+            background-color: #fff;
+            width: 100%;
+            max-width: 600px;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Form Title */
+        h2 {
+            text-align: center;
+            color: #4CAF50;
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        /* Form input styling */
+        label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="text"], input[type="number"], input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0 20px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus, input[type="number"]:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        /* Button styling */
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Input hover effect */
+        input[type="text"]:hover, input[type="number"]:hover, input[type="file"]:hover {
+            border-color: #4CAF50;
+        }
+
+        /* Submit button hover */
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        /* Form transition effect */
+        .container:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Register a New PG</h2>
+        <form method="POST" enctype="multipart/form-data">
+            <label for="name">Name:</label><br>
+            <input type="text" name="name" id="name" required><br>
+            
+            <label for="city">City:</label><br>
+            <input type="text" name="city" id="city" required><br>
+            
+            <label for="rooms">Rooms:</label><br>
+            <input type="number" name="rooms" id="rooms" required><br>
+            
+            <label for="rent">Rent:</label><br>
+            <input type="number" name="rent" id="rent" required><br>
+            
+            <label for="image">Image:</label><br>
+            <input type="file" name="image" id="image" accept="image/*"><br>
+            
+            <button type="submit">Register PG</button>
+        </form>
+    </div>
+</body>
+</html>

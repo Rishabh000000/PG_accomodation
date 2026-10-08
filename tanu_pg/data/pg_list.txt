@@ -1,0 +1,71 @@
+PG_ID: PG2
+Name: Sunshine PG
+City: kotdwara
+Rooms: 2
+Rent: 2000
+Image: static/uploads\WhatsApp_Image_2025-05-01_at_9.49.08_PM.jpeg
+
+PG_ID: PG2
+Name: Shrishti PG
+City: kotdwara
+Rooms: 1
+Rent: 3000
+Image: static/uploads\WhatsApp_Image_2025-05-01_at_9.49.08_PM_1.jpeg
+
+PG_ID: PG3
+Name: star PG
+City: delhi
+Rooms: 1
+Rent: 4000
+Image: static/uploads\WhatsApp_Image_2025-05-01_at_9.49.08_PM_2.jpeg
+
+PG_ID: PG4
+Name: moonlight PG
+City: delhi
+Rooms: 5
+Rent: 5000
+Image: static/uploads\WhatsApp_Image_2025-05-01_at_9.49.08_PM_3.jpeg
+
+PG_ID: PG5
+Name: Bhavna PG
+City: kotdwara
+Rooms: 2
+Rent: 3000
+Image: static/uploads\WhatsApp_Image_2025-05-01_at_9.49.08_PM_4.jpeg
+
+PG_ID: PG6
+Name: saurabh PG
+City: laaldhang
+Rooms: 1
+Rent: 2000
+Image: static/uploads\WhatsApp_Image_2025-05-01_at_9.49.08_PM_5.jpeg
+
+PG_ID: PG7
+Name: sudarshita PG
+City: kotdwara
+Rooms: 2
+Rent: 2000
+Image: static/uploads\WhatsApp_Image_2025-05-01_at_9.49.08_PM_6.jpeg
+
+PG_ID: PG9
+Name: Home Town_PG
+City: Delhi
+Rooms: 2
+Rent: 2000
+Image: /static/uploads/download.jpg
+
+
+PG_ID: PG9
+Name: Saurabh Chauhan_pg
+City: kota
+Rooms: 4
+Rent: 3000
+Image: /static/uploads/saurabh.jpg
+
+PG_ID: PG10
+Name: xgfjhy
+City: fhjklk
+Rooms: 2
+Rent: 1000
+Image: 
+

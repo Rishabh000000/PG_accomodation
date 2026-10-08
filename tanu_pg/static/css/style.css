@@ -1,0 +1,136 @@
+/* Reset & font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: #f2f6fc;
+    padding: 20px;
+    color: #333;
+}
+
+header {
+    background-color: #4b6cb7;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 5px;
+    background-color: #324d9c;
+    transition: background 0.3s;
+}
+
+nav a:hover {
+    background-color: #283e8e;
+}
+
+/* Search & Filter section */
+.search-filter {
+    background: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #ccc;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.search-filter input,
+.search-filter select,
+.search-filter button {
+    padding: 10px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.search-filter button {
+    background-color: #4b6cb7;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.search-filter button:hover {
+    background-color: #324d9c;
+}
+
+/* PG Cards */
+.pg-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.pg-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.pg-card:hover {
+    transform: translateY(-5px);
+}
+
+.pg-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.pg-details {
+    padding: 15px;
+}
+
+.pg-details h3 {
+    color: #324d9c;
+    margin-bottom: 10px;
+}
+
+.pg-details p {
+    margin-bottom: 8px;
+}
+
+.pg-details .btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #4b6cb7;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.pg-details .btn:hover {
+    background-color: #283e8e;
+}
+

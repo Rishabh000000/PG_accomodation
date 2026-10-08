@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Booking History</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        /* Container */
+        .container {
+            width: 100%;
+            max-width: 900px;
+            background-color: #fff;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        h2 {
+            text-align: center;
+            color: #4CAF50;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            text-transform: uppercase;
+        }
+
+        /* Booking card style */
+        .booking-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            padding: 15px;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .booking-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            background-color: #f9f9f9;
+        }
+
+        .booking-card p {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        .booking-card p strong {
+            color: #4CAF50;
+        }
+
+        .booking-card:hover p {
+            color: #333;
+        }
+
+        /* No bookings message */
+        .no-bookings {
+            text-align: center;
+            color: #555;
+            font-size: 1.2rem;
+            font-style: italic;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Booking History</h2>
+        {% for booking in bookings %}
+            <div class="booking-card">
+                <p><strong>User:</strong> {{ booking.User }}</p>
+                <p><strong>Contact:</strong> {{ booking.Contact }}</p>
+                <p><strong>Booked PG:</strong> {{ booking['Booked PG'] }}</p>
+            </div>
+        {% else %}
+            <p class="no-bookings">No bookings found.</p>
+        {% endfor %}
+    </div>
+</body>
+</html>

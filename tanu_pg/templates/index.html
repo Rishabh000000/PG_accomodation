@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PG Management System</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+<body>
+    <header>
+        <h1>🏠 PG Management System</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('view_pgs') }}">View PGs</a></li>
+                <li><a href="{{ url_for('register_pg') }}">Register PG</a></li>
+                <li><a href="{{ url_for('book_pg') }}">Book PG</a></li>
+                <li><a href="{{ url_for('login') }}">Admin Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h2 style="text-align:center;">Available PGs</h2>
+<div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+    {% for pg in pgs %}
+    <div style="border: 1px solid #ccc; padding: 15px; border-radius: 8px; width: 250px; background-color: #f9f9f9;">
+        <img src="{{ pg.Image }}" alt="PG Image" style="width:100%; height:150px; object-fit:cover; border-radius: 5px;">
+        <h3>{{ pg.Name }}</h3>
+        <p><strong>City:</strong> {{ pg.City }}</p>
+        <p><strong>Rooms:</strong> {{ pg.Rooms }}</p>
+        <p><strong>Rent:</strong> ₹{{ pg.Rent }}</p>
+    </div>
+    {% endfor %}
+</div>
+
+    <section class="search-filter">
+        <form method="GET" action="{{ url_for('home') }}">
+            <input type="text" name="city" placeholder="Search by city">
+            <select name="rooms">
+                <option value="">Filter by rooms</option>
+                <option value="1">1 Room</option>
+                <option value="2">2 Rooms</option>
+                <option value="3">3 Rooms</option>
+            </select>
+            <select name="rent">
+                <option value="">Filter by rent</option>
+                <option value="3000">Below ₹3000</option>
+                <option value="5000">Below ₹5000</option>
+                <option value="7000">Below ₹7000</option>
+            </select>
+            <button type="submit">Search</button>
+        </form>
+    </section>
+
+    <section class="pg-cards">
+        {% for pg in pgs %}
+            <div class="pg-card">
+                <img src="{{ url_for('static', filename='uploads/' + pg['Image']) }}" alt="PG Image">
+                <div class="pg-details">
+                    <h3>{{ pg['Name'] }}</h3>
+                    <p><strong>City:</strong> {{ pg['City'] }}</p>
+                    <p><strong>Rooms:</strong> {{ pg['Rooms'] }}</p>
+                    <p><strong>Rent:</strong> ₹{{ pg['Rent'] }}</p>
+                    <a href="{{ url_for('book_pg') }}" class="btn">Book Now</a>
+                </div>
+            </div>
+        {% endfor %}
+    </section>
+</body>
+</html>

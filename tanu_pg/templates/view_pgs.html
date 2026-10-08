@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View PGs</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+            color: #4CAF50;
+        }
+
+        /* Form styles */
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        input[type="text"], input[type="number"], button {
+            width: calc(33.333% - 10px);
+            padding: 8px;
+            margin: 5px 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* PG listing styles */
+        .pg-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .pg-container div {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            background-color: #fafafa;
+        }
+
+        .pg-container p {
+            margin: 5px 0;
+        }
+
+        .pg-container img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        /* Responsive design */
+        @media (max-width: 600px) {
+            input[type="text"], input[type="number"], button {
+                width: calc(100% - 20px);
+            }
+        }
+    </style>
+</head>
+<body>
+            <h2>Available PGs</h2>
+    <form method="GET">
+        <label>City:</label>
+        <input type="text" name="city" placeholder="Enter city">
+        <label>Min Rent:</label>
+        <input type="number" name="min_rent" placeholder="Min Rent">
+        <label>Max Rent:</label>
+        <input type="number" name="max_rent" placeholder="Max Rent">
+        <label>Min Rooms:</label>
+        <input type="number" name="min_rooms" placeholder="Min Rooms">
+        <label>Max Rooms:</label>
+        <input type="number" name="max_rooms" placeholder="Max Rooms">
+        <button type="submit">Filter</button>
+    </form>
+    <hr>
+    <div class="pg-container">
+        {% for pg in pgs %}
+            <div>
+                <p><strong>ID:</strong> {{ pg.PG_ID }}</p>
+                <p><strong>Name:</strong> {{ pg.Name }}</p>
+                <p><strong>City:</strong> {{ pg.City }}</p>
+                <p><strong>Rooms:</strong> {{ pg.Rooms }}</p>
+                <p><strong>Rent:</strong> ₹{{ pg.Rent }}</p>
+                {% if pg.Image %}
+                <img src="{{ pg['Image'] }}" alt="PG Image" width="200">
+                {% endif %}
+            </div>
+        {% else %}
+            <p>No PGs found matching the criteria.</p>
+        {% endfor %}
+    </div>
+</body>
+</html>
